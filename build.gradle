@@ -1,0 +1,21 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+
+  dependencies {
+    classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '1.4.1.RELEASE'
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.4.1.RELEASE'
+  compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
+}
