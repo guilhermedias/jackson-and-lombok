@@ -1,23 +1,16 @@
 package rocks.guilherme.user;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Value;
 
 import java.util.UUID;
 
+@AllArgsConstructor(onConstructor = @__(@JsonCreator))
+@Value
 class UserDto {
-  @JsonProperty
   private String firstName;
-  @JsonProperty
   private String lastName;
-
-  @JsonCreator
-  UserDto(
-      @JsonProperty("firstName") String firstName,
-      @JsonProperty("lastName") String lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
 
   UserDto(User user) {
     firstName = user.getFirstName();
